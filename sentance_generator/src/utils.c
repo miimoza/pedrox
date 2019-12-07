@@ -14,6 +14,13 @@ char **parseFile(char *file_path)
 		return array;
 	}
 
+	char *c = malloc(1);
+	while (fread(c, sizeof (char), 1, file)
+		   && (*c == ' ' || *c == '\n' || *c == '\t' || *c == '/'))
+		   {puts("hey");}
+	free(c);
+	fseek(file, -1, SEEK_CUR);
+
 	char **array = malloc(sizeof(char *));
 	int pos = 1;
 	size_t size = 1;
@@ -22,7 +29,8 @@ char **parseFile(char *file_path)
 	int b = 1;
 	while (fread(buffer + size - 1, sizeof (char), 1, file))
 	{
-		if (buffer[size - 1] == ' ' || buffer[size - 1] == '\n')
+		if (buffer[size - 1] == ' ' || buffer[size - 1] == '\n'
+			|| buffer[size - 1] == '\t' || buffer[size - 1] == '/')
 		{
 			if (b == 0) continue;
 			b = 0;
