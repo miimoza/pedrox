@@ -1,0 +1,12 @@
+#ifndef FR_SYLLABLES_H
+#define FR_SYLLABLES_H
+
+#define FR_SYLLABLES_LEN = 18;
+
+char const **FR_SYLLABLES = {
+	"BENOITPEUTON", "DOKASDOKASD", "CHLOETURNER", "ALIBOMAYE", "MERGUEZ", "PARFAIT", "BENOIT", "CHIAN",
+	"CHLOE", "NON", "ALI", "OUI", "OK", "CA", "PI", "B",
+	"A", "C"
+}
+
+#endif /* FR_SYLLABLES_H */
